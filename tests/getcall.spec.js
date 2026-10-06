@@ -13,12 +13,24 @@ test("Get call", async ({ request }) => {
 
     // get the response body as JSON
 
-    const jsondata=await resp.json()
+    const jsondata = await resp.json()
     // (console.log(jsondata)
+    // get the response body as text
+
+    const textdata = await resp.text()
+    //console.log(textdata)
+
+    // get the response body as buffer
+
+    const bufferdata = await resp.body()
+    //console.log(bufferdata)
+
+    //get the response headers
 
     const respheader = await resp.headers();
 
     //console.log(respheader)
+
     const statuscode = await resp.status();
     //console.log(statuscode);
     //expect(statuscode).toBe(200);
@@ -31,7 +43,7 @@ test("Get call", async ({ request }) => {
     expect(statustext).toBe("OK");
     expect(statuscode).toBe(200);
 
-    
+
 
 
 
